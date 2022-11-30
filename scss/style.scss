@@ -1,0 +1,152 @@
+@import 'normalize.css';
+
+// === mixins ===
+
+@mixin Font-Lato {
+    font-family: Lato, sans-serif;
+}
+
+// === / mixins ===
+
+// === colors ===
+
+
+// === / colors ===
+
+// === comon ===
+html {
+    background-color: #eee;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    @include Font-Lato;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+// === / comon ===
+
+// === header ===
+    .header {
+        width: 100%;
+        height: 60px;
+        box-sizing: border-box;
+
+        .container {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1280px;
+            min-width: 320px;
+            padding: 10px;
+
+            .header-title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .header-nav {
+                display: flex;
+                
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #999;
+                    letter-spacing: 0.5px;
+                }
+                .logo {
+                    color: #3c3c3c;
+                    font-size: 30px;
+                    letter-spacing: 1px;
+                }
+                .logo span{
+                    color: #999;
+                }
+                
+                &__list {
+                    display: flex;
+                    gap: 20px;
+                    list-style: none;
+                    font-size: 18px;
+                    color: #999;
+                }
+                &__list > li > a:hover {
+                    color: #3c3c3c;
+                }
+                
+            }
+            .header-btns {
+                display: flex;
+                gap: 20px;
+    
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #999;
+                    letter-spacing: 0.5px;
+                }
+                a:hover {
+                    color: #3c3c3c;
+                }
+                .search-box {
+                    display: flex;
+                    gap: 10px;
+                    height: 15px;
+                    border-radius: 20px;
+                    padding: 10px;
+                    //transform: translate(-50%, 50%);
+                    background: #eee;
+                    align-self: center;
+    
+                    .search-txt {
+                        background: none;
+                        border: none;
+                        outline: none;
+                        float: left;
+                        padding: 0;
+                        color: #999;
+                        font-size: 16px;
+                        transition: 0.4s;
+                        width: 0;
+                    }
+                    .search-btn {
+                        float: right;
+                        width: 15px;
+                        height: 15px;
+                        color: #999;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                .search-box:hover {
+                    border: 1px solid #3c3c3c;
+                }
+                .search-box:hover > .search-txt {
+                    width: 180px;
+                    padding: 0 6px;
+                }
+                .search-box:hover > .search-btn {
+                    color: #3c3c3c;
+                }
+            }
+        }
+        
+    }
+    @media all and (max-width: 1024px) {
+        .container {
+            max-width: 960px;
+            background-color: #3c3c;
+        }
+        
+    }
+    @media all and (max-width: )
+   
+    
+// === / header ===
