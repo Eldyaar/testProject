@@ -98,26 +98,24 @@ body {
   font-size: 18px;
   color: #999;
 }
-
+.menu-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  cursor: pointer;
+}
 .submenu {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: absolute;
   display: none;
   flex-direction: column;
   width: 100px;
   height: 150px;
   background-color: #fff;
-  z-index: 100;
 }
 .submenu > li {
   display: flex;
   align-items: stretch;
-}
-.menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
 }
 .submenu > li > a {
   display: flex;
@@ -130,20 +128,6 @@ body {
   list-style: none;
   text-align: left;
 }
-.submenu-poin {
-  position: absolute;
-  top: 45px;
-  left: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 200px;
-  background-color: #fff;
-  z-index: 100;
-}
-
 .header .container .menu > li > a:hover {
   color: #3c3c3c;
 }
@@ -194,6 +178,7 @@ body {
   transition: 0.4s;
   width: 0;
 }
+
 .header .container .header-btns .search-box .search-btn {
   float: right;
   width: 15px;
@@ -212,6 +197,10 @@ body {
 }
 .header .container .header-btns .search-box:hover {
   border: 1px solid #3c3c3c;
+  width: 100px;
+}
+.header .container .header-btns .search-box:hover::placeholder{
+  color: #3c3c3c;
 }
 .search-box-txt-click {
   width: 180px;

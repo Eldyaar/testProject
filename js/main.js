@@ -1,18 +1,39 @@
-"use strict";
+//"use strict";
 
 const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup");
 const menu = document.querySelector("#menu").cloneNode(1);
-const searchBoxBtn = document.querySelector("#search-btn");
-const searchBoxTxt = document.querySelector("#search-txt");
-
 const menuList = document.querySelector("#menu-list");
 const subMenu = document.querySelector("#submenu");
 
 hamb.addEventListener("click", hambHandler);
-searchBoxBtn.addEventListener("click", searchBoxBtnClick);
-menuList.addEventListener("click", test);
 
+// == выпадающий меню == 
+document.getElementById('menu').onmouseover = function(event) {
+	var target = event.target;
+	if(target.className == 'menu-list') {
+		var s = target.getElementsByClassName('submenu');
+		closeMenu();
+		s[0].style.display="block";
+	}
+}
+
+document.onmouseover = function(event){
+	var target = event.target;
+	console.log(event.target);
+	if(target.className!=='menu-list' && target.className!=='submenu'){
+		closeMenu();
+	}
+}
+
+function closeMenu(){
+	var menu = document.getElementById('menu');
+	var subm = document.getElementsByClassName('submenu');
+	for(let i=0; i<subm.length; i++) {
+		subm[i].style.display="none";
+	}
+}
+// == / выпадающий меню == 
 
 function hambHandler(event) {
 	event.preventDefault(); 
@@ -24,27 +45,6 @@ function renderPopup() {
 	popup.appendChild(menu);
 }
 
-function searchBoxBtnClick(event) {
-	event.preventDefault();
-	searchBoxTxt.classList.toggle("search-box-txt-click");
-}
-
-function test(event) {
-	//console.log(event.target);
-	event.preventDefault();
-	subMenu.classList.toggle('submenu-poin');
-		
-} /*
-$(document).ready(function(){
-	$('#menu-list').hover(
-	  function() {
-		 $( this ).removeClass('submenu');
-	  }, function() {
-		 $( this ).addClass('submenu-poin');
-	  }
-	);
- });*/
- 
  //Kata from Codewars
 function persistence(num){
 	let result = 0;
@@ -59,21 +59,3 @@ function persistence(num){
 	console.log(result);
 
 } //persistence(9999999999);
-const numberOfFilms = prompt('Сколько фильмов вы уже просмотрели?');
-let nameOfFilms = prompt('Один из последних просмотренных фильмов? ');
-let secondQuestion = prompt('Насколько оцените его?');
-
-//let nameOfFilms = 'stalker';
-//let secondQuestion = 12;
-
-var personalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false
-};
-
-personalMovieDB.movies[nameOfFilms] = secondQuestion;
-console.log(personalMovieDB.movies);
-
