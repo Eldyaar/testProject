@@ -34,7 +34,7 @@ function test(event) {
 	event.preventDefault();
 	subMenu.classList.toggle('submenu-poin');
 		
-} 
+} /*
 $(document).ready(function(){
 	$('#menu-list').hover(
 	  function() {
@@ -43,7 +43,7 @@ $(document).ready(function(){
 		 $( this ).addClass('submenu-poin');
 	  }
 	);
- });
+ });*/
  
  //Kata from Codewars
 function persistence(num){
@@ -58,5 +58,22 @@ function persistence(num){
 	} 
 	console.log(result);
 
-} persistence(9999999999);
+} //persistence(9999999999);
+const numberOfFilms = prompt('Сколько фильмов вы уже просмотрели?');
+let nameOfFilms = prompt('Один из последних просмотренных фильмов? ');
+let secondQuestion = prompt('Насколько оцените его?');
+
+//let nameOfFilms = 'stalker';
+//let secondQuestion = 12;
+
+var personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
+
+personalMovieDB.movies[nameOfFilms] = secondQuestion;
+console.log(personalMovieDB.movies);
 

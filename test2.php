@@ -29,4 +29,8 @@ $test->sum(3, 2);echo '<br>';
 $test->max(3, 2);
 
 
+
+
+
+
 ?>

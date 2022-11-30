@@ -1,52 +1,29 @@
+<form action="" method="post">
+    <p>введите количество строк:</p>   <br>
+    <input type="textbox" name="string" id="string">
+    <p>введите количество столбцов:</p>   <br>
+    <input type="textbox" name="column" id="column">
+
+    <input type="submit" id="btn" value="отправить">
+
+
+
+</form>
 <?php
+   //string
+    $stringArray = $_POST['string'];
+    $columnArray = $_POST['column'];
 
-    echo 'Hello World!';
-    echo '<hr>';
+    if(isset($_POST['btn'])) {
+        
 
-    $numbers = array (
-        1 => 23,
-        2 => 14
-    );
-    echo ('Сумма : ' . $numbers[1]+$numbers[2]); echo '<br>';
-    echo ('Вычитание : ' . $numbers[1]-$numbers[2]); echo '<br>';
-    echo ('Произведение : ' . $numbers[1]*$numbers[2]); 
-    echo '<br>';
-    echo ('Частное : ' . $numbers[1]/$numbers[2]);
 
-    echo '<hr>';
+    }
+    function countMultiple() {
+        $Adsxbckbnm = []
 
-    $arr = array(
-        "name" => "Eldyar",
-        "surname" => "Dolbekov", 
-        "age" => 19,
-        "education" => array(
-            "scool in 2022",
-            "at the moment studying at INIT"
-        )
-    );
-        echo($arr["name"]); echo('<br/>');
-        echo($arr["surname"]); echo('<br/>');
-        echo($arr["age"]); echo('<br/>');
-        echo($arr["education"][0]." and ".$arr["education"][1]);
-      
-        echo '<br>';
-        echo '<hr>';
+    } 
+
 
 ?>
-    <br>
-
-    <form action="" method="post">
-        <input type="textbox" name="input" id="last_val">
-        <input type="submit" name="submit" id="btn" value="Просчитать">
-    </form>
-
-    <?php
-    
-        fwrite(STDOUT, "Enter your given name: ");
-        $name = trim(fgets(STDIN));
-        fwrite(STDOUT, "Enter your last name: ");
-        $lastname = trim(fgets(STDIN));
-        fwrite(STDOUT, "Hello, $name $lastname!" . PHP_EOL);
-
-    ?>
 
