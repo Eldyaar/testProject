@@ -14,16 +14,5 @@
     $stringArray = $_POST['string'];
     $columnArray = $_POST['column'];
 
-    if(isset($_POST['btn'])) {
-        
-
-
-    }
-    function countMultiple() {
-        $Adsxbckbnm = []
-
-    } 
-
-
 ?>
 
