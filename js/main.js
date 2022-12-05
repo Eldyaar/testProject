@@ -39,6 +39,7 @@ function hambHandler(event) {
 	event.preventDefault(); 
 	popup.classList.toggle("open");
 	menu.classList.add('menu__burger');
+
 	renderPopup();
 
 
