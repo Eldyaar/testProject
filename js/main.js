@@ -63,3 +63,24 @@ function persistence(num){
 	console.log(result);
 
 } //persistence(9999999999);
+
+function testCycle(){
+	let numberOfFilms = 0;
+	let nameOfFilms = '';
+	for (let i = 0; i < 1; i++){
+	 numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+	 nameOfFilms = prompt('название фильмов которых вы просмотрели?', '');
+	 while(numberOfFilms == false){
+			numberOfFilms = +prompt('это поле объязательно нужно заполнить!!!', '');
+	 }
+	}
+	
+	while(nameOfFilms.length < 50) {
+		nameOfFilms = prompt('название фильмов должен состоять не менее 50 символов! Введите заново:', '');
+
+	}
+	
+	
+	console.log(numberOfFilms, nameOfFilms);
+
+} testCycle();
