@@ -64,23 +64,40 @@ function persistence(num){
 
 } //persistence(9999999999);
 
-function testCycle(){
-	let numberOfFilms = 0;
-	let nameOfFilms = '';
-	for (let i = 0; i < 1; i++){
-	 numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-	 nameOfFilms = prompt('название фильмов которых вы просмотрели?', '');
-	 while(numberOfFilms == false){
-			numberOfFilms = +prompt('это поле объязательно нужно заполнить!!!', '');
-	 }
-	}
-	
-	while(nameOfFilms.length < 50) {
-		nameOfFilms = prompt('название фильмов должен состоять не менее 50 символов! Введите заново:', '');
 
-	}
-	
-	
-	console.log(numberOfFilms, nameOfFilms);
+// === test ===
 
-} testCycle();
+let numberOfFilms;
+
+function start(){
+	numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+	while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+		numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+	}
+
+} start();
+
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: true
+};
+
+function showMyDB() {
+	if (personalMovieDB.privat == false) {
+		console.log(personalMovieDB);
+	}
+} showMyDB();
+
+function writeYourGenres() {
+	
+	for (let i = 0, j = 1; i < 3; i++) {
+		personalMovieDB.genres[i] = prompt(`Ваш любимый жанр по номером ${j}:`);
+		j++;
+	}
+	console.log(personalMovieDB);
+} writeYourGenres();
+
+// === / test ===
