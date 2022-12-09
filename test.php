@@ -13,6 +13,6 @@
    //string
     $stringArray = $_POST['string'];
     $columnArray = $_POST['column'];
-
+    $_POST['bhcbbc'] = t
 ?>
 
