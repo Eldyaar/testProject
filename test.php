@@ -5,14 +5,18 @@
     <input type="textbox" name="column" id="column">
 
     <input type="submit" id="btn" value="отправить">
-
-
-
 </form>
 <?php
    //string
-    $stringArray = $_POST['string'];
-    $columnArray = $_POST['column'];
-    $_POST['bhcbbc'] = t
+$stdout = fopen('php://stdout', 'w');
+$stderr = fopen('php://stderr', 'w');
+
+fwrite($stdout, 'Выполняем действие: ...');
+
+$result = someAction($params);
+
+if ($result === false) {
+    fwrite($stderr, 'При выполнении действия произошла ошибка: ...');
+}
 ?>
 

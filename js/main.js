@@ -1,4 +1,4 @@
-//"use strict";
+"use strict";
 
 const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup");
@@ -41,8 +41,6 @@ function hambHandler(event) {
 	menu.classList.add('menu__burger');
 
 	renderPopup();
-
-
 }  
 
 function renderPopup() {
